@@ -1,0 +1,75 @@
+/* Variables de color */
+$background-filter: rgba(0, 0, 0, 0.6); // Filtro negro translúcido para la imagen de fondo
+$text-color: #ffffff;
+$button-color: #333333;
+
+/* Estilos de la sección de bienvenida */
+.hero-section {
+  font-family: 'Mulish', sans-serif;
+  position: relative;
+  height: 100vh;
+  color: $text-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url('/banner-armaf.webp');
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $background-filter;
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+
+    .hero-subtitle {
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+      margin-bottom: 1rem;
+      font-family: 'Roboto Condensed', sans-serif;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .hero-description {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      font-family: 'Mulish', sans-serif;
+      font-weight: 400;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+
+      .btn-filled {
+        background-color: $button-color;
+        color: $text-color;
+        padding: 0.7rem 1.5rem;
+        border: none;
+        transition: background-color 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: lighten($button-color, 10%);
+        }
+      }
+    }
+  }
+}

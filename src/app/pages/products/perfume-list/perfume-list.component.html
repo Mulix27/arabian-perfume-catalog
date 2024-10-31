@@ -1,0 +1,18 @@
+<div class="perfume-list">
+  <h1>Perfumes de {{ (perfumes$ | async)?.[0]?.designer | uppercase }}</h1>
+  <div class="perfume-grid">
+    <div *ngFor="let perfume of perfumes$ | async" class="perfume-card">
+      <div class="image-container">
+        <img [src]="perfume.image" alt="{{ perfume.name }}" class="perfume-image" />
+      </div>
+      <div class="perfume-info">
+        <h2 class="perfume-name">{{ perfume.name }}</h2>
+        <p class="description">{{ perfume.description }}</p>
+        <div class="presentation">
+          <p><strong>{{ perfume.presentations[0].size }} ml - ${{ perfume.presentations[0].price }}</strong></p>
+        </div>
+        <p class="category">Categoría: {{ perfume.category | uppercase }}</p>
+      </div>
+    </div>
+  </div>
+</div>

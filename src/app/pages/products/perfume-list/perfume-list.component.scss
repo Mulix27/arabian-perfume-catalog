@@ -1,0 +1,149 @@
+.perfume-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+
+  h1 {
+    font-size: 2em; /* Tamaño base */
+    color: #333;
+    font-family: 'Mulish', sans-serif;
+    margin-bottom: 20px;
+  }
+
+  .perfume-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Tres columnas en pantallas grandes */
+    gap: 20px;
+  }
+
+  .perfume-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 250px; /* Altura ajustada */
+      overflow: hidden;
+      margin-bottom: 15px;
+
+      .perfume-image {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .perfume-info {
+      h2.perfume-name {
+        font-size: 1.5em; /* Tamaño base */
+        font-weight: bold;
+        color: #1a1a1a;
+        margin: 10px 0 5px 0;
+        font-family: 'Mulish', sans-serif;
+      }
+
+      .description {
+        font-size: 0.9em; /* Tamaño base */
+        color: #666;
+        font-family: 'Roboto Condensed', sans-serif;
+        margin-bottom: 10px;
+      }
+
+      .presentation {
+        font-size: 1.1em; /* Tamaño base */
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+        font-family: 'Roboto Condensed', sans-serif;
+      }
+
+      .category {
+        font-size: 0.85em; /* Tamaño base */
+        color: #888;
+        font-family: 'Roboto Condensed', sans-serif;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  /* Responsive para pantallas medianas */
+  @media (max-width: 768px) {
+    .perfume-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Dos columnas en pantallas medianas */
+    }
+
+    h1 {
+      font-size: 1.8em; /* Ajuste de título */
+    }
+
+    .perfume-card {
+      .perfume-info {
+        h2.perfume-name {
+          font-size: 1.3em; /* Ajuste para móviles medianos */
+        }
+
+        .presentation {
+          font-size: 1em;
+        }
+
+        .category {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+
+  /* Responsive para pantallas pequeñas (móviles) */
+  @media (max-width: 480px) {
+    .perfume-grid {
+      grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    h1 {
+      font-size: 1.5em; /* Ajuste de título */
+    }
+
+    .perfume-card {
+      padding: 15px;
+
+      .image-container {
+        height: 200px; /* Altura ajustada para móviles */
+      }
+
+      .perfume-info {
+        h2.perfume-name {
+          font-size: 1.2em; /* Ajuste para móviles */
+        }
+
+        .description {
+          font-size: 0.85em;
+        }
+
+        .presentation {
+          font-size: 0.95em;
+        }
+
+        .category {
+          font-size: 0.75em;
+        }
+      }
+    }
+  }
+}
