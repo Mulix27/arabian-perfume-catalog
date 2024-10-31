@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "dist/arabian-perfume-catalog"
+  publish = "dist/arabian-perfume-catalog/browser"
 
 [[redirects]]
   from = "/*"
