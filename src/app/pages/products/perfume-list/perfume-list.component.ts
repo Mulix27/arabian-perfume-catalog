@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink, RouterOutlet, Router} from '@angular/router';
 import { FirestoreService } from '../../../services/firestore.service';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Perfume } from '../../../models/perfume.model';
 
 @Component({
@@ -13,7 +13,7 @@ import { Perfume } from '../../../models/perfume.model';
   styleUrls: ['./perfume-list.component.scss']
 })
 export class PerfumeListComponent implements OnInit {
-  perfumes$: Observable<Perfume[]> | undefined;
+  perfumes$: Observable<Perfume[]> = of([]);
 
   constructor(
     private route: ActivatedRoute,
