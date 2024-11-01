@@ -1,4 +1,6 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[functions]
+directory = "netlify/functions"
+
+[[edge_functions]]
+function = "my-edge-function"
+path = "/api/hello"
