@@ -1,6 +1,8 @@
-[functions]
-directory = "netlify/functions"
+[build]
+  command = "npm run build"
+  publish = "dist/arabian-perfume-catalog/browser"
 
-[[edge_functions]]
-function = "my-edge-function"
-path = "/api/hello"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
